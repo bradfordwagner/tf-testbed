@@ -27,10 +27,6 @@ spec:
       parameters:
       - name: git_ref_type
       - name: git_version
-      - name: upstream_repo
-        value: quay.io/bradfordwagner/terraform
-      - name: upstream_tag
-        value: 1.0.0
     dag:
       tasks:
       - name: terraform
@@ -40,10 +36,6 @@ spec:
             value: https://github.com/bradfordwagner/tf-testbed.git
           - name: git_version
             value: "{{ inputs.parameters.git_version }}"
-          - name: upstream_repo
-            value: "{{ inputs.parameters.upstream_repo }}"
-          - name: upstream_tag
-            value: "{{ inputs.parameters.upstream_tag }}"
         templateRef:
           name: flavor-terraform-template
           template: "{{inputs.parameters.git_ref_type}}"
