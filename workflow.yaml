@@ -32,5 +32,5 @@ spec:
             value: quay.io/bradfordwagner/terraform:1.6.0-ubuntu_focal
         templateRef:
           name: flavor-terraform-template
-          template: "{{inputs.parameters.git_ref_type}}"
+          template: main
 
