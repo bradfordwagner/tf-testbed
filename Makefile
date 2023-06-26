@@ -10,5 +10,5 @@ c: clean
 # watch / develop
 dev_pipeline: plan
 watch:
-	@watchexec -cr -w . -w Makefile -- make dev_pipeline
+	@watchexec -c -r -w . -w Makefile -- make dev_pipeline
 dev: watch
