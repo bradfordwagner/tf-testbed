@@ -1,0 +1,22 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  clear:
+    internal: true
+    cmds: [clear]
+  tf_init:
+    deps: [clear]
+    cmds: [terraform init]
+  tf_plan:
+    deps: [tf_init, clear]
+    cmds: [terraform plan]
+  tf_apply:
+    deps: [clear]
+    cmds: [terraform apply -auto-approve]
+  tf_destroy:
+    deps: [clear]
+    cmds: [terraform destroy -auto-approve]
+  default:
+    deps: [tf_plan]
