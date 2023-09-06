@@ -13,7 +13,7 @@ tasks:
     deps: [tf_init, clear]
     cmds: [terraform plan]
   tf_apply:
-    deps: [clear]
+    deps: [clear, tf_init]
     cmds: [terraform apply -auto-approve]
   tf_destroy:
     deps: [clear]
