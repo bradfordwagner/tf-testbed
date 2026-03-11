@@ -7,13 +7,16 @@ tasks:
     internal: true
     cmds: [clear]
   tf_init:
+    aliases: [i]
     deps: [clear]
     cmds: [terraform init]
   tf_plan:
-    deps: [tf_init, clear]
+    aliases: [p]
+    deps: [clear]
     cmds: [terraform plan]
   tf_apply:
-    deps: [clear, tf_init]
+    aliases: [a]
+    deps: [tf_init]
     cmds: [terraform apply -auto-approve]
   tf_destroy:
     deps: [clear]
